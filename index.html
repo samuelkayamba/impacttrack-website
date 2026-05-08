@@ -334,11 +334,15 @@ setTimeout(update,20);
 };
 update();
 });
- //Resets main npage after submitting the form
- window.addEventListener('pageshow', (event) => {
-  // If the user navigated here via the back button (persisted state)
+ //Resets main page after submitting the form
+window.addEventListener('pageshow', (event) => {
+  // 1. "pageshow" runs every time the page is viewed.
+  
   if (event.persisted) {
+    // 2. "event.persisted" is only true if they used the Back/Forward button.
+    
     document.querySelector('.form').reset();
+    // 3. This clears all the text boxes so they are empty for the next use.
   }
 });
 
