@@ -334,6 +334,14 @@ setTimeout(update,20);
 };
 update();
 });
+ //Resets main npage after submitting the form
+ window.addEventListener('pageshow', (event) => {
+  // If the user navigated here via the back button (persisted state)
+  if (event.persisted) {
+    document.querySelector('.form').reset();
+  }
+});
+
 </script>
 
 </body>
